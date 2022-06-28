@@ -9,7 +9,6 @@ import java.util.*;
 import org.junit.*;
 
 import java.util.stream.*;
-import static java.util.stream.Collectors.toList;
 
 public class GameTest {
     @Test
@@ -67,7 +66,7 @@ public class GameTest {
         var kitty = new Hand(List.of(10,11,12));
 
         // test
-        var newPlayers = new Game(numPlayers, numCards, false).play(kitty, players.stream()).collect(toList());
+        var newPlayers = new Game(numPlayers, numCards, false).play(kitty, players.stream()).toList();
 
         assertEquals(3, newPlayers.size());
         assertEquals(0, newPlayers.get(0).getNumCardsInHand());

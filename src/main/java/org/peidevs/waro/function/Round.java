@@ -6,7 +6,6 @@ import org.peidevs.waro.table.*;
 import java.util.*;
 import java.util.stream.*;
 import java.util.function.*;
-import static java.util.stream.Collectors.toList;
 import static java.util.Comparator.comparing;
 
 public class Round implements UnaryOperator<Stream<Player>> {
@@ -41,7 +40,7 @@ public class Round implements UnaryOperator<Stream<Player>> {
     // --------- internal 
     
     protected List<Bid> getAllBids(Stream<Player> players, int prizeCard) {
-        return players.map(p -> p.getBid(prizeCard)).collect(toList());
+        return players.map(p -> p.getBid(prizeCard)).toList();
     }
     
     protected Bid findWinningBid(List<Bid> bids) {

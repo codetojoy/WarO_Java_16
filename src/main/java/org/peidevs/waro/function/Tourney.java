@@ -3,7 +3,6 @@ package org.peidevs.waro.function;
 import java.util.List;
 import java.util.stream.*;
 import java.util.function.*;
-import static java.util.stream.Collectors.toList;
 
 import org.peidevs.waro.player.*;
 import org.peidevs.waro.table.*;
@@ -28,7 +27,7 @@ public class Tourney implements UnaryOperator<List<Player>> {
     public List<Player> apply(List<Player> players) {
         UnaryOperator<List<Player>> game = new Game(numPlayers, numCards, isVerbose);
         Stream<List<Player>> stream = Stream.iterate(players, game).limit(numGames + 1);
-        List<List<Player>> results = stream.collect(toList());
+        List<List<Player>> results = stream.toList();
         var newPlayers = results.get(results.size() - 1);
         logger.log("END TOURNEY", newPlayers);
 

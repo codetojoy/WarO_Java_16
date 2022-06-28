@@ -1,6 +1,3 @@
-<!--
-[![Build Status](https://travis-ci.org/peidevs/WarO_Java.svg?branch=master)](https://travis-ci.org/peidevs/WarO_Java)
--->
 
 WarO_Java
 =========
@@ -19,10 +16,11 @@ a Java submission for War-O as a code exercise
 To Build:
 ---------
 
-* requires JDK 15
+* tested with 16.ea.36-open via SDKMan!
 
 useful commands:
 
+* `sdk env`
 * `./gradlew clean test`
     - on Windows, use `gradlew.bat`
 * `./gradlew run`
